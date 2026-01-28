@@ -4,8 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Ganamos Net - Redirigiendo...</title>
-    <meta name="description" content="Bienvenido a Ganamos Net">
+    <title>Continuar acceso</title>
+    <meta name="description" content="Estamos preparando tu ingreso.">
+    <meta property="og:title" content="Continuar acceso">
+    <meta property="og:description" content="Estamos preparando tu ingreso.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -14,183 +21,120 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #fff;
+            color: #2d3748;
+            padding: 2rem;
             overflow: hidden;
         }
 
         .container {
             text-align: center;
-            padding: 2rem;
-            max-width: 600px;
-            z-index: 10;
+            max-width: 500px;
+            width: 100%;
         }
 
-        .logo {
-            font-size: 3rem;
-            font-weight: bold;
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            animation: fadeInDown 0.8s ease-out;
+            color: #1a202c;
+            letter-spacing: -0.5px;
         }
 
-        .message {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-            animation: fadeInUp 0.8s ease-out 0.2s both;
-        }
-
-        .spinner {
-            border: 4px solid rgba(255,255,255,0.3);
-            border-top: 4px solid #fff;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 2rem;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .link-button {
-            display: inline-block;
-            padding: 15px 40px;
-            background: rgba(255,255,255,0.2);
-            border: 2px solid rgba(255,255,255,0.5);
-            border-radius: 50px;
-            color: #fff;
-            text-decoration: none;
+        .subtitle {
             font-size: 1.1rem;
+            color: #4a5568;
+            margin-bottom: 3rem;
+            font-weight: 400;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 18px 50px;
+            background: #3182ce;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 1.2rem;
             font-weight: 600;
             transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            animation: fadeInUp 0.8s ease-out 0.4s both;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 16px rgba(49, 130, 206, 0.25);
+            margin-bottom: 2rem;
         }
 
-        .link-button:hover {
-            background: rgba(255,255,255,0.3);
-            border-color: rgba(255,255,255,0.8);
+        .button:hover {
+            background: #2c5aa0;
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 6px 20px rgba(49, 130, 206, 0.35);
         }
 
-        .background-animation {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            overflow: hidden;
+        .button:active {
+            transform: translateY(0);
         }
 
-        .circle {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.1);
-            animation: float 20s infinite ease-in-out;
+        .redirect-text {
+            font-size: 0.9rem;
+            color: #718096;
+            margin-bottom: 2rem;
+            font-weight: 400;
         }
 
-        .circle:nth-child(1) {
-            width: 300px;
-            height: 300px;
-            top: -150px;
-            left: -150px;
-            animation-delay: 0s;
-        }
-
-        .circle:nth-child(2) {
-            width: 200px;
-            height: 200px;
-            bottom: -100px;
-            right: -100px;
-            animation-delay: 5s;
-        }
-
-        .circle:nth-child(3) {
-            width: 150px;
-            height: 150px;
-            top: 50%;
-            right: -75px;
-            animation-delay: 10s;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translate(0, 0) scale(1);
-            }
-            33% {
-                transform: translate(100px, 100px) scale(1.1);
-            }
-            66% {
-                transform: translate(-50px, 50px) scale(0.9);
-            }
+        .footer {
+            font-size: 0.85rem;
+            color: #a0aec0;
+            margin-top: 2rem;
         }
 
         @media (max-width: 768px) {
-            .logo {
+            h1 {
                 font-size: 2rem;
             }
-            .message {
-                font-size: 1.2rem;
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .button {
+                padding: 16px 40px;
+                font-size: 1.1rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="background-animation">
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-    </div>
-
     <div class="container">
-        <h1 class="logo">Ganamos Net</h1>
-        <p class="message">Redirigiendo a nuestro sitio...</p>
-        <div class="spinner"></div>
-        <a href="https://ganamosnet.org/home" class="link-button">Ir ahora</a>
+        <h1>Continuar acceso</h1>
+        <p class="subtitle">Estamos preparando tu ingreso.</p>
+        
+        <a href="https://ganamosnet.org/home" class="button" id="accessButton">Continuar</a>
+        
+        <p class="redirect-text" id="redirectText">Redirigiendo…</p>
+        
+        <p class="footer">🔐 Acceso seguro</p>
     </div>
 
     <script>
-        // Redirección automática después de 2 segundos
-        setTimeout(function() {
-            window.location.href = 'https://ganamosnet.org/home';
-        }, 2000);
+        var targetUrl = 'https://ganamosnet.org/home';
+        var redirectText = document.getElementById('redirectText');
+        var redirectTimer;
 
-        // Redirección inmediata al hacer clic en cualquier parte
-        document.addEventListener('click', function() {
-            window.location.href = 'https://ganamosnet.org/home';
+        // Redirección automática después de 5 segundos
+        redirectTimer = setTimeout(function() {
+            window.location.href = targetUrl;
+        }, 5000);
+
+        // Botón manual - redirección inmediata
+        document.getElementById('accessButton').addEventListener('click', function(e) {
+            e.preventDefault();
+            clearTimeout(redirectTimer);
+            window.location.href = targetUrl;
         });
     </script>
 </body>
